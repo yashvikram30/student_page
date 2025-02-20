@@ -1,46 +1,62 @@
-import Image from "next/image"
-import { CustomButton } from "@/components/ui/button"
-import { CustomCard, CardContent } from "@/components/ui/card"
-import { ChevronRight, Users, Compass, BookOpen, Coffee, Activity, Heart, Globe } from "lucide-react"
+"use client"
+import Image from "next/image";
+import { CustomButton } from "@/components/ui/button";
+import { CustomCard, CardContent } from "@/components/ui/card";
+import {
+  ChevronRight,
+  Users,
+  Compass,
+  BookOpen,
+  Coffee,
+  Activity,
+  Heart,
+  Globe,
+} from "lucide-react";
+import studentsImg from "@/components/images/students.jpg";
+
 
 export default function StudentLife() {
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Hero Section with Parallax Effect */}
       <section className="relative h-[90vh] overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-md">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src={studentsImg}
             alt="Campus life"
             fill
             className="object-cover"
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-transparent">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/10 to-transparent">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.1),_transparent_50%)]" />
         </div>
         <div className="relative h-full">
           <div className="container mx-auto flex h-full items-center px-4">
             <div className="max-w-3xl">
-              <h1 className="mb-6 text-5xl font-bold text-black md:text-6xl lg:text-7xl">
+              <h1 className="mb-6 text-5xl font-bold text-black md:text-6xl lg:text-7xl backdrop-blur-sm">
                 Discover Your
-                <span className="block bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
-  Student Journey
-</span>
-
+                <span className="block bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent backdrop-blur-sm">
+                  Student Journey
+                </span>
               </h1>
-              <p className="mb-8 text-xl text-black/90 md:text-2xl">
-                Join a vibrant community where passion meets purpose, and every day brings new opportunities for growth.
+              <p className="mb-8 text-xl text-black/90 md:text-2xl backdrop-blur-sm">
+                Join a vibrant community where passion meets purpose, and every
+                day brings new opportunities for growth.
               </p>
               <div className="flex flex-wrap gap-4">
-                <CustomButton size="lg" className="rounded-full bg-primary hover:bg-primary/90">
+                <CustomButton
+                  size="lg"
+                  className="rounded-full bg-primary hover:bg-primary/90 backdrop-blur-sm"
+                >
                   Explore Campus Life
                 </CustomButton>
                 <CustomButton
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-white text-black backdrop-blur-sm hover:bg-white/10"
+                  className="rounded-full border-white text-black  backdrop-blur-sm hover:bg-white/40"
+                  onClick={()=>(window.location.href = "https://www.youtube.com/watch?v=eOnJjASnSY0")}
                 >
                   Watch Video
                 </CustomButton>
@@ -59,7 +75,9 @@ export default function StudentLife() {
               { number: "50+", label: "Countries Represented" },
             ].map((stat, index) => (
               <div key={index} className="text-center text-black">
-                <div className="text-3xl font-bold md:text-4xl">{stat.number}</div>
+                <div className="text-3xl font-bold md:text-4xl">
+                  {stat.number}
+                </div>
                 <div className="text-sm opacity-80">{stat.label}</div>
               </div>
             ))}
@@ -71,9 +89,12 @@ export default function StudentLife() {
       <section className="relative py-24">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">Life at Campus</h2>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+              Life at Campus
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Immerse yourself in a dynamic environment where academic excellence meets vibrant student life.
+              Immerse yourself in a dynamic environment where academic
+              excellence meets vibrant student life.
             </p>
           </div>
 
@@ -82,7 +103,8 @@ export default function StudentLife() {
               {
                 icon: Users,
                 title: "Student Communities",
-                description: "Join diverse groups and forge lifelong friendships",
+                description:
+                  "Join diverse groups and forge lifelong friendships",
               },
               {
                 icon: Compass,
@@ -118,7 +140,9 @@ export default function StudentLife() {
                   <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3 text-primary">
                     <feature.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
+                  <h3 className="mb-2 text-xl font-semibold">
+                    {feature.title}
+                  </h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                   <div className="mt-4 flex items-center text-primary">
                     <span className="text-sm font-medium">Learn more</span>
@@ -156,27 +180,33 @@ export default function StudentLife() {
               </div>
             </div>
             <div className="flex flex-col justify-center">
-              <h2 className="mb-6 text-3xl font-bold md:text-4xl">Experience the Extraordinary</h2>
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+                Experience the Extraordinary
+              </h2>
               <p className="mb-8 text-lg text-muted-foreground">
-                Our campus is more than just buildings and classrooms—it&apos;s a living, breathing community where every day
-                brings new opportunities for growth, discovery, and connection.
+                Our campus is more than just buildings and classrooms—it&apos;s
+                a living, breathing community where every day brings new
+                opportunities for growth, discovery, and connection.
               </p>
               <div className="grid gap-6">
                 {[
                   {
                     icon: Heart,
                     title: "Wellness & Recreation",
-                    description: "State-of-the-art facilities for fitness and relaxation",
+                    description:
+                      "State-of-the-art facilities for fitness and relaxation",
                   },
                   {
                     icon: Users,
                     title: "Cultural Programs",
-                    description: "Diverse events celebrating our global community",
+                    description:
+                      "Diverse events celebrating our global community",
                   },
                   {
                     icon: Coffee,
                     title: "Social Spaces",
-                    description: "Modern venues for collaboration and connection",
+                    description:
+                      "Modern venues for collaboration and connection",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -185,7 +215,9 @@ export default function StudentLife() {
                     </div>
                     <div>
                       <h3 className="mb-1 font-semibold">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -214,6 +246,5 @@ export default function StudentLife() {
         </div>
       </section> */}
     </div>
-  )
+  );
 }
-
